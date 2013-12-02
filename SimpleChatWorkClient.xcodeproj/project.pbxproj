@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5508D891E2A64EB29FED0524 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B64B79DCC424EA189A00306 /* libPods.a */; };
 		C33D3478184C3192009B0B1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33D3477184C3192009B0B1F /* Foundation.framework */; };
 		C33D347A184C3192009B0B1F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33D3479184C3192009B0B1F /* CoreGraphics.framework */; };
 		C33D347C184C3192009B0B1F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33D347B184C3192009B0B1F /* UIKit.framework */; };
@@ -22,6 +23,9 @@
 		C33D349C184C3192009B0B1F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33D347B184C3192009B0B1F /* UIKit.framework */; };
 		C33D34A4184C3192009B0B1F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C33D34A2184C3192009B0B1F /* InfoPlist.strings */; };
 		C33D34A6184C3192009B0B1F /* SimpleChatWorkClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C33D34A5184C3192009B0B1F /* SimpleChatWorkClientTests.m */; };
+		C33D34B1184C3290009B0B1F /* ChatRoomListController.m in Sources */ = {isa = PBXBuildFile; fileRef = C33D34B0184C3290009B0B1F /* ChatRoomListController.m */; };
+		C33D34B4184C32AE009B0B1F /* CWClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C33D34B3184C32AE009B0B1F /* CWClient.m */; };
+		C3530A70184C371D00F83366 /* ChatRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3530A6F184C371D00F83366 /* ChatRoomCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B64B79DCC424EA189A00306 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E57556CEBBE469CB2FDCAAF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C33D3474184C3192009B0B1F /* SimpleChatWorkClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleChatWorkClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33D3477184C3192009B0B1F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C33D3479184C3192009B0B1F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,6 +61,12 @@
 		C33D34A1184C3192009B0B1F /* SimpleChatWorkClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleChatWorkClientTests-Info.plist"; sourceTree = "<group>"; };
 		C33D34A3184C3192009B0B1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C33D34A5184C3192009B0B1F /* SimpleChatWorkClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleChatWorkClientTests.m; sourceTree = "<group>"; };
+		C33D34AF184C3290009B0B1F /* ChatRoomListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomListController.h; sourceTree = "<group>"; };
+		C33D34B0184C3290009B0B1F /* ChatRoomListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomListController.m; sourceTree = "<group>"; };
+		C33D34B2184C32AE009B0B1F /* CWClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWClient.h; sourceTree = "<group>"; };
+		C33D34B3184C32AE009B0B1F /* CWClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWClient.m; sourceTree = "<group>"; };
+		C3530A6E184C371D00F83366 /* ChatRoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomCell.h; sourceTree = "<group>"; };
+		C3530A6F184C371D00F83366 /* ChatRoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +77,7 @@
 				C33D347A184C3192009B0B1F /* CoreGraphics.framework in Frameworks */,
 				C33D347C184C3192009B0B1F /* UIKit.framework in Frameworks */,
 				C33D3478184C3192009B0B1F /* Foundation.framework in Frameworks */,
+				5508D891E2A64EB29FED0524 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +101,7 @@
 				C33D349F184C3192009B0B1F /* SimpleChatWorkClientTests */,
 				C33D3476184C3192009B0B1F /* Frameworks */,
 				C33D3475184C3192009B0B1F /* Products */,
+				9E57556CEBBE469CB2FDCAAF /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +121,7 @@
 				C33D3479184C3192009B0B1F /* CoreGraphics.framework */,
 				C33D347B184C3192009B0B1F /* UIKit.framework */,
 				C33D3499184C3192009B0B1F /* XCTest.framework */,
+				3B64B79DCC424EA189A00306 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -120,6 +135,12 @@
 				C33D348C184C3192009B0B1F /* Main_iPad.storyboard */,
 				C33D348F184C3192009B0B1F /* ViewController.h */,
 				C33D3490184C3192009B0B1F /* ViewController.m */,
+				C33D34AF184C3290009B0B1F /* ChatRoomListController.h */,
+				C33D34B0184C3290009B0B1F /* ChatRoomListController.m */,
+				C33D34B2184C32AE009B0B1F /* CWClient.h */,
+				C33D34B3184C32AE009B0B1F /* CWClient.m */,
+				C3530A6E184C371D00F83366 /* ChatRoomCell.h */,
+				C3530A6F184C371D00F83366 /* ChatRoomCell.m */,
 				C33D3492184C3192009B0B1F /* Images.xcassets */,
 				C33D347E184C3192009B0B1F /* Supporting Files */,
 			);
@@ -162,9 +183,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C33D34A9184C3192009B0B1F /* Build configuration list for PBXNativeTarget "SimpleChatWorkClient" */;
 			buildPhases = (
+				27DE1F3472CF44178DD3A065 /* Check Pods Manifest.lock */,
 				C33D3470184C3192009B0B1F /* Sources */,
 				C33D3471184C3192009B0B1F /* Frameworks */,
 				C33D3472184C3192009B0B1F /* Resources */,
+				33EF030735384C0A99224BF5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,13 +271,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		27DE1F3472CF44178DD3A065 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		33EF030735384C0A99224BF5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C33D3470184C3192009B0B1F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C33D34B1184C3290009B0B1F /* ChatRoomListController.m in Sources */,
 				C33D3491184C3192009B0B1F /* ViewController.m in Sources */,
+				C3530A70184C371D00F83366 /* ChatRoomCell.m in Sources */,
 				C33D3488184C3192009B0B1F /* AppDelegate.m in Sources */,
+				C33D34B4184C32AE009B0B1F /* CWClient.m in Sources */,
 				C33D3484184C3192009B0B1F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,12 +448,14 @@
 		};
 		C33D34AA184C3192009B0B1F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E57556CEBBE469CB2FDCAAF /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleChatWorkClient/SimpleChatWorkClient-Prefix.pch";
 				INFOPLIST_FILE = "SimpleChatWorkClient/SimpleChatWorkClient-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -402,12 +463,14 @@
 		};
 		C33D34AB184C3192009B0B1F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E57556CEBBE469CB2FDCAAF /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleChatWorkClient/SimpleChatWorkClient-Prefix.pch";
 				INFOPLIST_FILE = "SimpleChatWorkClient/SimpleChatWorkClient-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -474,6 +537,7 @@
 				C33D34AB184C3192009B0B1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C33D34AC184C3192009B0B1F /* Build configuration list for PBXNativeTarget "SimpleChatWorkClientTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +546,7 @@
 				C33D34AE184C3192009B0B1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

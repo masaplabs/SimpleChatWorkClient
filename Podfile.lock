@@ -1,0 +1,18 @@
+PODS:
+  - MKNetworkKit (0.87):
+    - Reachability (~> 3.1.0)
+  - Reachability (3.1.1)
+  - SDWebImage (3.5):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.5)
+
+DEPENDENCIES:
+  - MKNetworkKit
+  - SDWebImage
+
+SPEC CHECKSUMS:
+  MKNetworkKit: f174100f92473012138b6b1c3040266af8d43a14
+  Reachability: be4883bb93f31e38266ae3365e5600a317aae735
+  SDWebImage: f1a72472f8a2d54445f1fedafe2090593d9caf7f
+
+COCOAPODS: 0.25.0
