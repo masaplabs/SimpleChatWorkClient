@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ChatRoomListController.h"
+#import "TaskListController.h"
 
 @implementation AppDelegate
 
@@ -18,15 +19,19 @@
     // tabBarController を生成
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     
-    // chatRoomListController を作成する
+    // 各 Controller を作成する
     ChatRoomListController *chatRoomListController = [[ChatRoomListController alloc] init];
+    TaskListController *taskListController = [[TaskListController alloc] init];
     
     // navigationController を作成する
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:chatRoomListController];
+    UINavigationController *chatRoomListNavigationController = [[UINavigationController alloc] initWithRootViewController:chatRoomListController];
+    
+    UINavigationController *taskListNavigationController = [[UINavigationController alloc] initWithRootViewController:taskListController];
     
     // tabBarController に navigationController を設定する
     [tabBarController setViewControllers:[NSMutableArray arrayWithObjects:
-                                               navigationController,
+                                        chatRoomListNavigationController,
+                                        taskListNavigationController,
                                                nil]];
     
     [self.window setRootViewController:tabBarController];

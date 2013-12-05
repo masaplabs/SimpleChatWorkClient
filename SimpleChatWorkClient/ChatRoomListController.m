@@ -53,38 +53,24 @@
     [super viewDidLoad];
     
     // メインスクリーン
-    _mainScreen = [[UIScreen mainScreen] applicationFrame];
+    self.mainScreen = [[UIScreen mainScreen] applicationFrame];
     
     //テーブルビューを作成
-    _tableView = [[UITableView alloc]
-                          initWithFrame:CGRectMake(0, 0, _mainScreen.size.width, _mainScreen.size.height)
+    self.tableView = [[UITableView alloc]
+                          initWithFrame:CGRectMake(0, 0, self.mainScreen.size.width, self.mainScreen.size.height)
                           style:UITableViewStylePlain];
     
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    [self.view addSubview:_tableView];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
     
     // リフレッシュコントロールを作成
     _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
-    [_tableView addSubview:_refreshControl];
-}
-
-// チャットルームリスト表示処理
-- (void)viewDidAppear:(BOOL)animated
-{
-    CWClient *client = [CWClient sharedInstance];
+    [self.tableView addSubview:_refreshControl];
     
-    // チャットルームリスト読み込み
-    [client getRooms:^(NSArray *json) {
-        // 取得完了
-        _rooms = json;
-        [self.tableView reloadData];
-        DLog(@"取得成功");
-    } errorHandler:^(NSError *error) {
-        // エラー表示
-        DLog("%@", error);
-    }];
+    // チャットルームリスト取得
+    [self getRooms];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -93,19 +79,34 @@
     [super viewWillDisappear:animated];
 }
 
+#pragma mark - チャットルームリスト取得
+
+- (void)getRooms
+{
+    CWClient *client = [CWClient sharedInstance];
+    
+    // チャットルームリスト読み込み
+    [client getRooms:^(NSArray *json) {
+        // 取得完了
+        _rooms = json;
+        [self.tableView reloadData];
+        // リフレッシュ完了
+        [_refreshControl endRefreshing];
+        DLog(@"チャットルームリスト取得成功");
+    } errorHandler:^(NSError *error) {
+        // リフレッシュ完了
+        [_refreshControl endRefreshing];
+        // エラー表示
+        DLog("%@", error);
+    }];
+}
+
 #pragma mark - テーブルリフレッシュ処理
 
 // リフレッシュ処理
 - (void)refresh
 {
-    // 1秒後に endRefresh を動かしているだけ
-    [NSTimer scheduledTimerWithTimeInterval:0.f target:self selector:@selector(endRefresh) userInfo:nil repeats:NO];
-}
-
-- (void)endRefresh
-{
-    // リフレッシュ完了
-    [_refreshControl endRefreshing];
+    [NSTimer scheduledTimerWithTimeInterval:0.f target:self selector:@selector(getRooms) userInfo:nil repeats:NO];
 }
 
 #pragma mark - TableView の基本的な設定
@@ -127,7 +128,7 @@
 {
     static NSString *CellIdentifier = @"Cell";
     // セルを取得する
-    ChatRoomCell* cell = (ChatRoomCell*)[_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    ChatRoomCell* cell = (ChatRoomCell*)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // 使いまわせるセルがあったらそれを使用する
     if (!cell) {
