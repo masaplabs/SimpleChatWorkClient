@@ -26,6 +26,7 @@
 		C33D34B1184C3290009B0B1F /* ChatRoomListController.m in Sources */ = {isa = PBXBuildFile; fileRef = C33D34B0184C3290009B0B1F /* ChatRoomListController.m */; };
 		C33D34B4184C32AE009B0B1F /* CWClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C33D34B3184C32AE009B0B1F /* CWClient.m */; };
 		C3530A70184C371D00F83366 /* ChatRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3530A6F184C371D00F83366 /* ChatRoomCell.m */; };
+		C3D6E817184ED04300EF3317 /* TaskListController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D6E816184ED04300EF3317 /* TaskListController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		C33D34B3184C32AE009B0B1F /* CWClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWClient.m; sourceTree = "<group>"; };
 		C3530A6E184C371D00F83366 /* ChatRoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomCell.h; sourceTree = "<group>"; };
 		C3530A6F184C371D00F83366 /* ChatRoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomCell.m; sourceTree = "<group>"; };
+		C3D6E815184ED04300EF3317 /* TaskListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListController.h; sourceTree = "<group>"; };
+		C3D6E816184ED04300EF3317 /* TaskListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,16 +134,10 @@
 			children = (
 				C33D3486184C3192009B0B1F /* AppDelegate.h */,
 				C33D3487184C3192009B0B1F /* AppDelegate.m */,
-				C33D3489184C3192009B0B1F /* Main_iPhone.storyboard */,
-				C33D348C184C3192009B0B1F /* Main_iPad.storyboard */,
-				C33D348F184C3192009B0B1F /* ViewController.h */,
-				C33D3490184C3192009B0B1F /* ViewController.m */,
-				C33D34AF184C3290009B0B1F /* ChatRoomListController.h */,
-				C33D34B0184C3290009B0B1F /* ChatRoomListController.m */,
-				C33D34B2184C32AE009B0B1F /* CWClient.h */,
-				C33D34B3184C32AE009B0B1F /* CWClient.m */,
-				C3530A6E184C371D00F83366 /* ChatRoomCell.h */,
-				C3530A6F184C371D00F83366 /* ChatRoomCell.m */,
+				C3D6E811184EC8C300EF3317 /* Controller */,
+				C3D6E812184EC8E500EF3317 /* View */,
+				C3D6E813184EC8FF00EF3317 /* Lib */,
+				C3D6E814184EC91800EF3317 /* Others */,
 				C33D3492184C3192009B0B1F /* Images.xcassets */,
 				C33D347E184C3192009B0B1F /* Supporting Files */,
 			);
@@ -174,6 +171,46 @@
 				C33D34A2184C3192009B0B1F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3D6E811184EC8C300EF3317 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C33D34AF184C3290009B0B1F /* ChatRoomListController.h */,
+				C33D34B0184C3290009B0B1F /* ChatRoomListController.m */,
+				C3D6E815184ED04300EF3317 /* TaskListController.h */,
+				C3D6E816184ED04300EF3317 /* TaskListController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C3D6E812184EC8E500EF3317 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C3530A6E184C371D00F83366 /* ChatRoomCell.h */,
+				C3530A6F184C371D00F83366 /* ChatRoomCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C3D6E813184EC8FF00EF3317 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				C33D34B2184C32AE009B0B1F /* CWClient.h */,
+				C33D34B3184C32AE009B0B1F /* CWClient.m */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
+		C3D6E814184EC91800EF3317 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				C33D3489184C3192009B0B1F /* Main_iPhone.storyboard */,
+				C33D348C184C3192009B0B1F /* Main_iPad.storyboard */,
+				C33D348F184C3192009B0B1F /* ViewController.h */,
+				C33D3490184C3192009B0B1F /* ViewController.m */,
+			);
+			name = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +351,7 @@
 				C3530A70184C371D00F83366 /* ChatRoomCell.m in Sources */,
 				C33D3488184C3192009B0B1F /* AppDelegate.m in Sources */,
 				C33D34B4184C32AE009B0B1F /* CWClient.m in Sources */,
+				C3D6E817184ED04300EF3317 /* TaskListController.m in Sources */,
 				C33D3484184C3192009B0B1F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
