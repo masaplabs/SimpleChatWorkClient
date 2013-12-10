@@ -10,7 +10,6 @@
 
 @interface ChatRoomCell : UITableViewCell
 
-// プロパティ
 @property (nonatomic) UILabel* titleLabel;
 @property (nonatomic) UILabel* subtitleLabel;
 @property (nonatomic) UIImageView* roomIconView;

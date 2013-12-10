@@ -26,6 +26,7 @@
 		C33D34B1184C3290009B0B1F /* ChatRoomListController.m in Sources */ = {isa = PBXBuildFile; fileRef = C33D34B0184C3290009B0B1F /* ChatRoomListController.m */; };
 		C33D34B4184C32AE009B0B1F /* CWClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C33D34B3184C32AE009B0B1F /* CWClient.m */; };
 		C3530A70184C371D00F83366 /* ChatRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3530A6F184C371D00F83366 /* ChatRoomCell.m */; };
+		C3B9170F18516F5C0065AC59 /* TaskListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B9170E18516F5C0065AC59 /* TaskListCell.m */; };
 		C3D6E817184ED04300EF3317 /* TaskListController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D6E816184ED04300EF3317 /* TaskListController.m */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,8 @@
 		C33D34B3184C32AE009B0B1F /* CWClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWClient.m; sourceTree = "<group>"; };
 		C3530A6E184C371D00F83366 /* ChatRoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomCell.h; sourceTree = "<group>"; };
 		C3530A6F184C371D00F83366 /* ChatRoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomCell.m; sourceTree = "<group>"; };
+		C3B9170D18516F5C0065AC59 /* TaskListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListCell.h; sourceTree = "<group>"; };
+		C3B9170E18516F5C0065AC59 /* TaskListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListCell.m; sourceTree = "<group>"; };
 		C3D6E815184ED04300EF3317 /* TaskListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListController.h; sourceTree = "<group>"; };
 		C3D6E816184ED04300EF3317 /* TaskListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +192,8 @@
 			children = (
 				C3530A6E184C371D00F83366 /* ChatRoomCell.h */,
 				C3530A6F184C371D00F83366 /* ChatRoomCell.m */,
+				C3B9170D18516F5C0065AC59 /* TaskListCell.h */,
+				C3B9170E18516F5C0065AC59 /* TaskListCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3B9170F18516F5C0065AC59 /* TaskListCell.m in Sources */,
 				C33D34B1184C3290009B0B1F /* ChatRoomListController.m in Sources */,
 				C33D3491184C3192009B0B1F /* ViewController.m in Sources */,
 				C3530A70184C371D00F83366 /* ChatRoomCell.m in Sources */,

@@ -48,6 +48,10 @@
     return self;
 }
 
+- (void)setupRowData:(NSDictionary *)rowData
+{
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
