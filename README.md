@@ -11,7 +11,7 @@ static NSString * const CONST_API_TOKEN = @"YOUR CHATWORK API TOKEN";
 
 ## LICENSE
 
-@see: [LICENSE]()  
+@see: [LICENSE](https://github.com/masaplabs/SimpleChatWorkClient/blob/master/LICENSE)  
 
 [MKNetworkKit](https://github.com/MugunthKumar/MKNetworkKit)  
 [SDWebImage](https://github.com/rs/SDWebImage)  
