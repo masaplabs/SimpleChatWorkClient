@@ -26,6 +26,7 @@
 		C33D34B1184C3290009B0B1F /* ChatRoomListController.m in Sources */ = {isa = PBXBuildFile; fileRef = C33D34B0184C3290009B0B1F /* ChatRoomListController.m */; };
 		C33D34B4184C32AE009B0B1F /* CWClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C33D34B3184C32AE009B0B1F /* CWClient.m */; };
 		C3530A70184C371D00F83366 /* ChatRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3530A6F184C371D00F83366 /* ChatRoomCell.m */; };
+		C39761B618629E190012352C /* TimeLineController.m in Sources */ = {isa = PBXBuildFile; fileRef = C39761B518629E190012352C /* TimeLineController.m */; };
 		C3B9170F18516F5C0065AC59 /* TaskListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B9170E18516F5C0065AC59 /* TaskListCell.m */; };
 		C3D6E817184ED04300EF3317 /* TaskListController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D6E816184ED04300EF3317 /* TaskListController.m */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,8 @@
 		C33D34B3184C32AE009B0B1F /* CWClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWClient.m; sourceTree = "<group>"; };
 		C3530A6E184C371D00F83366 /* ChatRoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomCell.h; sourceTree = "<group>"; };
 		C3530A6F184C371D00F83366 /* ChatRoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomCell.m; sourceTree = "<group>"; };
+		C39761B418629E190012352C /* TimeLineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeLineController.h; sourceTree = "<group>"; };
+		C39761B518629E190012352C /* TimeLineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeLineController.m; sourceTree = "<group>"; };
 		C3B9170D18516F5C0065AC59 /* TaskListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListCell.h; sourceTree = "<group>"; };
 		C3B9170E18516F5C0065AC59 /* TaskListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListCell.m; sourceTree = "<group>"; };
 		C3D6E815184ED04300EF3317 /* TaskListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListController.h; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 		C3D6E811184EC8C300EF3317 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C39761B418629E190012352C /* TimeLineController.h */,
+				C39761B518629E190012352C /* TimeLineController.m */,
 				C33D34AF184C3290009B0B1F /* ChatRoomListController.h */,
 				C33D34B0184C3290009B0B1F /* ChatRoomListController.m */,
 				C3D6E815184ED04300EF3317 /* TaskListController.h */,
@@ -358,6 +363,7 @@
 				C33D3488184C3192009B0B1F /* AppDelegate.m in Sources */,
 				C33D34B4184C32AE009B0B1F /* CWClient.m in Sources */,
 				C3D6E817184ED04300EF3317 /* TaskListController.m in Sources */,
+				C39761B618629E190012352C /* TimeLineController.m in Sources */,
 				C33D3484184C3192009B0B1F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

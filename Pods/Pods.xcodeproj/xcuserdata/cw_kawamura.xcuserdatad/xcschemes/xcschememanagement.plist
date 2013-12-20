@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-JSMessagesViewController.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>Pods-JSQSystemSoundPlayer.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Pods-MKNetworkKit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -32,12 +42,42 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>37C3E94DEDC64E0586DDF97A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3BBDA593D6E14D61B6D6C222</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4FC9CD64B800464A9F98EF19</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>50AFB697143E4562BF92EF0D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6398E22F794F4B6A80E0D2B8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9AA0393BF5354418A488456B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B6F06B3446874AF39BD89B9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C62A9FF5F1B1468AADCB8127</key>
 		<dict>
 			<key>primary</key>
 			<true/>

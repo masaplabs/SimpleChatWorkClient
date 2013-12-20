@@ -9,6 +9,7 @@
 #import "ChatRoomListController.h"
 #import "UIImageView+WebCache.h"
 #import "ChatRoomCell.h"
+#import "TimeLineController.h"
 #import "CWClient.h"
 
 @interface ChatRoomListController ()
@@ -141,6 +142,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSDictionary *room = _rooms[indexPath.row];
+    
+    // コントローラーを作成する
+    TimeLineController* controller = [[TimeLineController alloc] initWithChatRoom:room];
+    
+    // タブバーを隠す
+    controller.hidesBottomBarWhenPushed = YES;
+    
+    // ナビゲーションコントローラに追加する
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 # pragma mark - TableViewCell の更新
@@ -148,7 +160,7 @@
 - (void)updateCell:(UITableViewCell*)cell atIndexPath:(NSIndexPath*)indexPath
 {
     // 指定された行のチャットルームを取得
-    NSDictionary *room= [self.rooms objectAtIndex:indexPath.row];
+    NSDictionary *room = [self.rooms objectAtIndex:indexPath.row];
     
     // タイトルの設定
     NSString *title = room[@"name"];

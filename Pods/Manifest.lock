@@ -1,4 +1,7 @@
 PODS:
+  - JSMessagesViewController (3.4.0):
+    - JSQSystemSoundPlayer
+  - JSQSystemSoundPlayer (1.4.0)
   - MKNetworkKit (0.87):
     - Reachability (~> 3.1.0)
   - Reachability (3.1.1)
@@ -7,10 +10,13 @@ PODS:
   - SDWebImage/Core (3.5)
 
 DEPENDENCIES:
+  - JSMessagesViewController
   - MKNetworkKit
   - SDWebImage
 
 SPEC CHECKSUMS:
+  JSMessagesViewController: f01a5fcbaa20ad7758a4cb350677a0a55aa02bf6
+  JSQSystemSoundPlayer: 28ccd01a92a0cebc6de6361e8499011b4cb6dab7
   MKNetworkKit: f174100f92473012138b6b1c3040266af8d43a14
   Reachability: be4883bb93f31e38266ae3365e5600a317aae735
   SDWebImage: f1a72472f8a2d54445f1fedafe2090593d9caf7f

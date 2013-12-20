@@ -17,7 +17,7 @@ static CWClient* _sharedInstance = nil;
 
 #pragma mark - 初期化
 
-+(CWClient*)sharedInstance
++ (CWClient*)sharedInstance
 {
     // インスタンスを作成する
     if (!_sharedInstance) {
@@ -27,7 +27,7 @@ static CWClient* _sharedInstance = nil;
     return _sharedInstance;
 }
 
--(id)init {
+- (id)init {
     NSString *apiToken = CONST_API_TOKEN;
     if(self = [super initWithHostName:@"api.chatwork.com/v1" customHeaderFields:@{@"X-ChatWorkToken": apiToken, @"User-Agent": @"NCW iOS Client/1.0.0"}]) {
         
@@ -40,7 +40,7 @@ static CWClient* _sharedInstance = nil;
 #pragma mark - /rooms
 
 // getRooms
--(MKNetworkOperation*)getRooms:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
+- (MKNetworkOperation*)getRooms:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
     MKNetworkOperation *op = [self operationWithPath:@"rooms" params:@{} httpMethod:@"GET" ssl:YES];
     [op setFreezable:YES];
     [op addCompletionHandler:^(MKNetworkOperation* completedOperation) {
@@ -58,7 +58,7 @@ static CWClient* _sharedInstance = nil;
 }
 
 // getTasks
--(MKNetworkOperation*)getTasks:(NSNumber *)roomId completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
+- (MKNetworkOperation*)getTasks:(NSNumber *)roomId completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
     NSString *pathBase = @"rooms/";
     NSString *roomIdString = [NSString stringWithFormat:@"%@", roomId];
     NSString *pathTasks = @"/tasks";
@@ -83,7 +83,7 @@ static CWClient* _sharedInstance = nil;
 }
 
 // getTasks
--(MKNetworkOperation*)getFiles:(NSNumber *)roomId completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
+- (MKNetworkOperation*)getFiles:(NSNumber *)roomId completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
     NSString *pathBase = @"rooms/";
     NSString *roomIdString = [NSString stringWithFormat:@"%@", roomId];
     NSString *pathFiles = @"/files";
@@ -108,7 +108,7 @@ static CWClient* _sharedInstance = nil;
 }
 
 // getMembers
--(MKNetworkOperation*)getMembers:(NSNumber *)roomId completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
+- (MKNetworkOperation*)getMembers:(NSNumber *)roomId completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
     NSString *pathBase = @"rooms/";
     NSString *roomIdString = [NSString stringWithFormat:@"%@", roomId];
     NSString *pathMembers = @"/members";
@@ -133,7 +133,7 @@ static CWClient* _sharedInstance = nil;
 }
 
 // getRoomById
--(MKNetworkOperation*)getRoomById:(NSNumber *)roomId completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
+- (MKNetworkOperation*)getRoomById:(NSNumber *)roomId completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
     NSString *pathBase = @"rooms/";
     NSString *roomIdString = [NSString stringWithFormat:@"%@", roomId];
     
@@ -157,7 +157,7 @@ static CWClient* _sharedInstance = nil;
 }
 
 // getTaskById
--(MKNetworkOperation*)getTaskById:(NSNumber *)roomId taskId:(NSNumber *)taskId completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
+- (MKNetworkOperation*)getTaskById:(NSNumber *)roomId taskId:(NSNumber *)taskId completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
     NSString *pathBase = @"rooms/";
     NSString *roomIdString = [NSString stringWithFormat:@"%@", roomId];
     NSString *pathTasks = @"/tasks/";
@@ -183,7 +183,7 @@ static CWClient* _sharedInstance = nil;
 }
 
 // getFileById
--(MKNetworkOperation*)getFileById:(NSNumber *)roomId fileId:(NSNumber *)fileId completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
+- (MKNetworkOperation*)getFileById:(NSNumber *)roomId fileId:(NSNumber *)fileId completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
     NSString *pathBase = @"rooms/";
     NSString *roomIdString = [NSString stringWithFormat:@"%@", roomId];
     NSString *pathFiles = @"/files/";
@@ -212,7 +212,7 @@ static CWClient* _sharedInstance = nil;
 #pragma mark - /contacts
 
 // getContacts
--(MKNetworkOperation*)getContacts:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
+- (MKNetworkOperation*)getContacts:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
     MKNetworkOperation *op = [self operationWithPath:@"contacts" params:@{} httpMethod:@"GET" ssl:YES];
     [op setFreezable:YES];
     [op addCompletionHandler:^(MKNetworkOperation* completedOperation) {
@@ -232,7 +232,7 @@ static CWClient* _sharedInstance = nil;
 #pragma mark - /my
 
 // getMyStatus
--(MKNetworkOperation*)getMyStatus:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
+- (MKNetworkOperation*)getMyStatus:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
     MKNetworkOperation *op = [self operationWithPath:@"my/status" params:@{} httpMethod:@"GET" ssl:YES];
     [op setFreezable:YES];
     [op addCompletionHandler:^(MKNetworkOperation* completedOperation) {
@@ -250,7 +250,7 @@ static CWClient* _sharedInstance = nil;
 }
 
 // getMyTasks
--(MKNetworkOperation*)getMyTasks:(NSDictionary *)params completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
+- (MKNetworkOperation*)getMyTasks:(NSDictionary *)params completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
     MKNetworkOperation *op = [self operationWithPath:@"my/tasks" params:params httpMethod:@"GET" ssl:YES];
     [op setFreezable:YES];
     [op addCompletionHandler:^(MKNetworkOperation* completedOperation) {
@@ -270,7 +270,7 @@ static CWClient* _sharedInstance = nil;
 #pragma mark - /me
 
 // getMyStatus
--(MKNetworkOperation*)getMe:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
+- (MKNetworkOperation*)getMe:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
     MKNetworkOperation *op = [self operationWithPath:@"me" params:@{} httpMethod:@"GET" ssl:YES];
     [op setFreezable:YES];
     [op addCompletionHandler:^(MKNetworkOperation* completedOperation) {
@@ -292,7 +292,7 @@ static CWClient* _sharedInstance = nil;
 #pragma mark - /rooms
 
 // postRooms
--(MKNetworkOperation*)postRooms:(NSDictionary *)params completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
+- (MKNetworkOperation*)postRooms:(NSDictionary *)params completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
     MKNetworkOperation *op = [self operationWithPath:@"rooms" params:params httpMethod:@"POST" ssl:YES];
     [op setFreezable:YES];
     [op addCompletionHandler:^(MKNetworkOperation* completedOperation) {
@@ -310,7 +310,7 @@ static CWClient* _sharedInstance = nil;
 }
 
 // postMessage
--(MKNetworkOperation*)postMessage:(NSNumber *)roomId body:(NSString *)body completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
+- (MKNetworkOperation*)postMessage:(NSNumber *)roomId body:(NSString *)body completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
     NSDictionary *params = @{@"body": body};
     
     NSString *pathBase = @"rooms/";
@@ -335,7 +335,7 @@ static CWClient* _sharedInstance = nil;
 }
 
 // postTask
--(MKNetworkOperation*)postTask:(NSNumber *)roomId params:(NSDictionary *)params completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
+- (MKNetworkOperation*)postTask:(NSNumber *)roomId params:(NSDictionary *)params completionHandler:(IDBlock)success errorHandler:(MKNKErrorBlock)error {
     
     NSString *pathBase = @"rooms/";
     NSString *roomIdString = [NSString stringWithFormat:@"%@", roomId];
@@ -363,7 +363,7 @@ static CWClient* _sharedInstance = nil;
 #pragma mark - /rooms
 
 // deleteRoomById
--(MKNetworkOperation*)deleteRoomById:(NSNumber *)roomId type:(NSString *)type {
+- (MKNetworkOperation*)deleteRoomById:(NSNumber *)roomId type:(NSString *)type {
     NSDictionary *params = @{@"action_type": type};
     
     NSString *pathBase = @"rooms/";
