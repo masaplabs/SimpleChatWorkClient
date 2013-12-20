@@ -46,21 +46,21 @@
     [super viewDidLoad];
     
     // メインスクリーン
-    _mainScreen = [[UIScreen mainScreen] applicationFrame];
+    self.mainScreen = [[UIScreen mainScreen] applicationFrame];
     
     //テーブルビューを作成
-    _tableView = [[UITableView alloc]
-                    initWithFrame:CGRectMake(0, 0, _mainScreen.size.width, _mainScreen.size.height + 20)
+    self.tableView = [[UITableView alloc]
+                    initWithFrame:CGRectMake(0, 0, self.mainScreen.size.width, self.mainScreen.size.height + 20)
                           style:UITableViewStylePlain];
     
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    [self.view addSubview:_tableView];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
     
     // リフレッシュコントロールを作成
     _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
-    [_tableView addSubview:_refreshControl];
+    [self.tableView addSubview:_refreshControl];
     
     // チャットルームリスト取得
     [self getRooms];
@@ -80,9 +80,9 @@
     // チャットルームリスト読み込み
     [client getRooms:^(NSArray *json) {
         // 取得完了時処理
-        _rooms = json;
+        self.rooms = json;
         
-        [_tableView reloadData];
+        [self.tableView reloadData];
         
         // リフレッシュ完了
         [_refreshControl endRefreshing];
@@ -116,7 +116,7 @@
 // テーブルビューに何行表示させるか
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_rooms count];
+    return [self.rooms count];
 }
 
 // テーブルビューセル作成
@@ -125,7 +125,7 @@
     static NSString *CellIdentifier = @"Cell";
     
     // セル取得
-    ChatRoomCell* cell = (ChatRoomCell*)[_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    ChatRoomCell* cell = (ChatRoomCell*)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (!cell) {
         cell = [[ChatRoomCell alloc]
@@ -143,7 +143,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSDictionary *room = _rooms[indexPath.row];
+    NSDictionary *room = self.rooms[indexPath.row];
     
     // コントローラーを作成する
     TimeLineController* controller = [[TimeLineController alloc] initWithChatRoom:room];

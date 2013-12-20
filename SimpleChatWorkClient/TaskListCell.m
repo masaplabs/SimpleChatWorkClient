@@ -21,30 +21,30 @@
     }
     
     // タスク本文
-    _bodyLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    _bodyLabel.font = [UIFont systemFontOfSize:14.0f];
-    _bodyLabel.textColor = [UIColor blackColor];
-    _bodyLabel.highlightedTextColor = [UIColor whiteColor];
-    _bodyLabel.numberOfLines = 0; // 行数無制限
-    _bodyLabel.lineBreakMode = NSLineBreakByWordWrapping; // 折り返し
+    self.bodyLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.bodyLabel.font = [UIFont systemFontOfSize:14.0f];
+    self.bodyLabel.textColor = [UIColor blackColor];
+    self.bodyLabel.highlightedTextColor = [UIColor whiteColor];
+    self.bodyLabel.numberOfLines = 0; // 行数無制限
+    self.bodyLabel.lineBreakMode = NSLineBreakByWordWrapping; // 折り返し
     
     // 期限
-    _limitLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    _limitLabel.font = [UIFont systemFontOfSize:12.0f];
-    _limitLabel.textColor = [UIColor grayColor];
-    _limitLabel.highlightedTextColor = [UIColor whiteColor];
+    self.limitLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.limitLabel.font = [UIFont systemFontOfSize:12.0f];
+    self.limitLabel.textColor = [UIColor grayColor];
+    self.limitLabel.highlightedTextColor = [UIColor whiteColor];
     
     // UIImageView の作成 (placeholder使用)
     UIImage* image = [UIImage imageNamed:@"placeholder.png"];
-    _iconView = [[UIImageView alloc] initWithImage:image];
+    self.iconView = [[UIImageView alloc] initWithImage:image];
     
     CGRect rect = CGRectMake(0, 0, 36, 36);
-    _iconView.frame = rect;
+    self.iconView.frame = rect;
     
     // セルに各要素を追加
-    [self.contentView addSubview:_bodyLabel];
-    [self.contentView addSubview:_limitLabel];
-    [self.contentView addSubview:_iconView];
+    [self.contentView addSubview:self.bodyLabel];
+    [self.contentView addSubview:self.limitLabel];
+    [self.contentView addSubview:self.iconView];
     
     return self;
     
@@ -81,10 +81,10 @@
     // iconViewのレイアウト
     iconViewFrame.origin.x = 4.0f;
     iconViewFrame.origin.y = 4.0f;
-    iconViewFrame.size = _iconView.frame.size;
+    iconViewFrame.size = self.iconView.frame.size;
     
     if (withLayout) {
-        _iconView.frame = iconViewFrame;
+        self.iconView.frame = iconViewFrame;
     }
     
     CGFloat minHeight = iconViewFrame.origin.y + iconViewFrame.size.height + CELLMARGIN;
@@ -94,10 +94,10 @@
     bodyLabelFrame.origin.y = CELLMARGIN;
     bodyLabelFrame.size.width = size.width - bodyLabelFrame.origin.x - CELLMARGIN;
     bodyLabelFrame.size.height = size.height - bodyLabelFrame.origin.y;
-    bodyLabelFrame.size = [_bodyLabel sizeThatFits:bodyLabelFrame.size];
+    bodyLabelFrame.size = [self.bodyLabel sizeThatFits:bodyLabelFrame.size];
     
     if (withLayout) {
-        _bodyLabel.frame = bodyLabelFrame;
+        self.bodyLabel.frame = bodyLabelFrame;
     }
     
     CGRect limitLabelFrame;
@@ -105,10 +105,10 @@
     limitLabelFrame.origin.y = bodyLabelFrame.origin.y + bodyLabelFrame.size.height + CELLMARGIN;
     limitLabelFrame.size.width = size.width - limitLabelFrame.origin.x - CELLMARGIN;
     limitLabelFrame.size.height = size.height - limitLabelFrame.origin.y + CELLMARGIN;
-    limitLabelFrame.size = [_limitLabel sizeThatFits:limitLabelFrame.size];
+    limitLabelFrame.size = [self.limitLabel sizeThatFits:limitLabelFrame.size];
     
     if (withLayout) {
-        _limitLabel.frame = limitLabelFrame;
+        self.limitLabel.frame = limitLabelFrame;
     }
     
     size.height = bodyLabelFrame.size.height + limitLabelFrame.size.height + CELLMARGIN * 2;

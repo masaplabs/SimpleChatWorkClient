@@ -22,28 +22,28 @@
     }
     
     // title ラベルの作成
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    _titleLabel.font = [UIFont boldSystemFontOfSize:16.0f];
-    _titleLabel.textColor = [UIColor blackColor];
-    _titleLabel.highlightedTextColor = [UIColor whiteColor];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:16.0f];
+    self.titleLabel.textColor = [UIColor blackColor];
+    self.titleLabel.highlightedTextColor = [UIColor whiteColor];
     
     // subtitle ラベルの作成
-    _subtitleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    _subtitleLabel.font = [UIFont systemFontOfSize:12.0f];
-    _subtitleLabel.textColor = [UIColor grayColor];
-    _subtitleLabel.highlightedTextColor = [UIColor whiteColor];
+    self.subtitleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.subtitleLabel.font = [UIFont systemFontOfSize:12.0f];
+    self.subtitleLabel.textColor = [UIColor grayColor];
+    self.subtitleLabel.highlightedTextColor = [UIColor whiteColor];
     
     // UIImageView の作成 (placeholder使用)
     UIImage* image = [UIImage imageNamed:@"placeholder.png"];
-    _roomIconView = [[UIImageView alloc] initWithImage:image];
+    self.roomIconView = [[UIImageView alloc] initWithImage:image];
     
     CGRect rect = CGRectMake(0, 0, 36, 36);
-    _roomIconView.frame = rect;
+    self.roomIconView.frame = rect;
     
     // セルに各要素を追加
-    [self.contentView addSubview:_titleLabel];
-    [self.contentView addSubview:_subtitleLabel];
-    [self.contentView addSubview:_roomIconView];
+    [self.contentView addSubview:self.titleLabel];
+    [self.contentView addSubview:self.subtitleLabel];
+    [self.contentView addSubview:self.roomIconView];
     
     return self;
 }
@@ -74,22 +74,22 @@
     // imageViewのレイアウト
     rect.origin.x = 4.0f;
     rect.origin.y = 4.0f;
-    rect.size = _roomIconView.frame.size;
-    _roomIconView.frame = rect;
+    rect.size = self.roomIconView.frame.size;
+    self.roomIconView.frame = rect;
     
     // titleLabel のレイアウト
-    rect.origin.x = CGRectGetMaxX(_roomIconView.frame) + 4.0f;
+    rect.origin.x = CGRectGetMaxX(self.roomIconView.frame) + 4.0f;
     rect.origin.y = CGRectGetMinY(bounds) + 4.0f;
     rect.size.width = CGRectGetWidth(bounds) - CGRectGetMinX(rect);
     rect.size.height = 22.0f;
-    _titleLabel.frame = rect;
+    self.titleLabel.frame = rect;
     
     // subtitleLabel のレイアウト
-    rect.origin.x = CGRectGetMinX(_titleLabel.frame);
-    rect.origin.y = CGRectGetMaxY(_titleLabel.frame);
-    rect.size.width = CGRectGetWidth(_titleLabel.frame);
+    rect.origin.x = CGRectGetMinX(self.titleLabel.frame);
+    rect.origin.y = CGRectGetMaxY(self.titleLabel.frame);
+    rect.size.width = CGRectGetWidth(self.titleLabel.frame);
     rect.size.height = 14.0f;
-    _subtitleLabel.frame = rect;
+    self.subtitleLabel.frame = rect;
     
 }
 

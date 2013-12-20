@@ -11,24 +11,25 @@
 @implementation CWClient
 
 // ChatWork API Token Here
-static NSString * const CONST_API_TOKEN = @"YOUR CHATWORK API TOKEN";
-
-static CWClient* _sharedInstance = nil;
+static NSString * const API_TOKEN = @"YOUR CHATWORK API TOKEN";
 
 #pragma mark - 初期化
 
 + (CWClient*)sharedInstance
 {
-    // インスタンスを作成する
-    if (!_sharedInstance) {
-        _sharedInstance = [[CWClient alloc] init];
-    }
+    static CWClient *client;
+    static dispatch_once_t onceToken;
     
-    return _sharedInstance;
+    // インスタンスを作成する
+    dispatch_once(&onceToken, ^{
+        client = [CWClient new];
+    });
+    
+    return client;
 }
 
 - (id)init {
-    NSString *apiToken = CONST_API_TOKEN;
+    NSString *apiToken = API_TOKEN;
     if(self = [super initWithHostName:@"api.chatwork.com/v1" customHeaderFields:@{@"X-ChatWorkToken": apiToken, @"User-Agent": @"NCW iOS Client/1.0.0"}]) {
         
     }

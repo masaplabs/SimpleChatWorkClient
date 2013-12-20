@@ -44,21 +44,21 @@
     [super viewDidLoad];
 
     // メインスクリーン
-    _mainScreen = [[UIScreen mainScreen] applicationFrame];
+    self.mainScreen = [[UIScreen mainScreen] applicationFrame];
     
     //テーブルビューを作成
-    _tableView = [[UITableView alloc]
-                  initWithFrame:CGRectMake(0, 0, _mainScreen.size.width, _mainScreen.size.height + 20)
+    self.tableView = [[UITableView alloc]
+                  initWithFrame:CGRectMake(0, 0, self.mainScreen.size.width, self.mainScreen.size.height + 20)
                   style:UITableViewStylePlain];
     
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    [self.view addSubview:_tableView];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
     
     // リフレッシュコントロールを作成
-    _refreshControl = [[UIRefreshControl alloc] init];
-    [_refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
-    [_tableView addSubview:_refreshControl];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
     
     // タスクリスト読み込み
     [self getTasks];
@@ -78,17 +78,17 @@
     // タスクリスト読み込み
     [client getMyTasks:params completionHandler:^(NSArray *json) {
         // 取得完了時処理
-        _tasks = json;
+        self.tasks = json;
         
-        [_tableView reloadData];
+        [self.tableView reloadData];
         
         // リフレッシュ完了
-        [_refreshControl endRefreshing];
+        [self.refreshControl endRefreshing];
         
         DLog(@"タスクリスト取得成功");
     } errorHandler:^(NSError *error) {
         // リフレッシュ完了
-        [_refreshControl endRefreshing];
+        [self.refreshControl endRefreshing];
         
         // エラー表示
         DLog("%@", error);
@@ -114,7 +114,7 @@
 // テーブルビューに何行表示させるか
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_tasks count];
+    return [self.tasks count];
 }
 
 // テーブルビューセル作成
@@ -123,7 +123,7 @@
     static NSString *CellIdentifier = @"Cell";
     
     // セル取得
-    TaskListCell *cell = (TaskListCell*)[_tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    TaskListCell *cell = (TaskListCell*)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (!cell) {
         cell = [[TaskListCell alloc]
@@ -145,13 +145,10 @@
 // テーブルビューセルの高さを取得
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO:高さを図るためだけのダミー cell を使用するバージョンに書き換える
-    // 参考: http://blogios.stack3.net/archives/380
-    
-    UITableViewCell *cell = [self tableView:_tableView cellForRowAtIndexPath:indexPath];
+    UITableViewCell *cell = [self tableView:self.tableView cellForRowAtIndexPath:indexPath];
     
     CGSize size;
-    size.width = _tableView.frame.size.width;
+    size.width = self.tableView.frame.size.width;
     size.height = 2000.0f;
     
     size = [cell sizeThatFits:size];

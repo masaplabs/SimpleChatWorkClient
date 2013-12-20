@@ -31,8 +31,8 @@
         return nil;
     }
     
-    _roomId = room[@"room_id"];
-    _roomName = room[@"name"];
+    self.roomId = room[@"room_id"];
+    self.roomName = room[@"name"];
     
     return self;
 }
@@ -45,7 +45,7 @@
     
     [[JSBubbleView appearance] setFont:[UIFont systemFontOfSize:16.0f]];
     
-    self.title = _roomName;
+    self.title = self.roomName;
     
     self.messageInputView.textView.placeHolder = @"ここにメッセージ内容を入力";
     
@@ -73,7 +73,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _messages.count;
+    return self.messages.count;
 }
 
 #pragma mark - Messages view delegate: REQUIRED
@@ -84,14 +84,14 @@
     CWClient *client = [CWClient sharedInstance];
     
     // メッセージ送信
-    [client postMessage:_roomId body:text completionHandler:^(NSDictionary *json) {
-        [_messages addObject:text];
+    [client postMessage:self.roomId body:text completionHandler:^(NSDictionary *json) {
+        [self.messages addObject:text];
         
-        [_timestamps addObject:[NSDate date]];
+        [self.timestamps addObject:[NSDate date]];
         
         [JSMessageSoundEffect playMessageReceivedSound];
         
-        [_subtitles addObject:@"名称未設定"];
+        [self.subtitles addObject:@"名称未設定"];
         
         [self finishSend];
         [self scrollToBottomAnimated:YES];
@@ -190,24 +190,24 @@
 
 - (NSString *)textForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [_messages objectAtIndex:indexPath.row];
+    return [self.messages objectAtIndex:indexPath.row];
 }
 
 - (NSDate *)timestampForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [_timestamps objectAtIndex:indexPath.row];
+    return [self.timestamps objectAtIndex:indexPath.row];
 }
 
 - (UIImageView *)avatarImageViewForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *subtitle = [_subtitles objectAtIndex:indexPath.row];
-    UIImage *image = [_avatars objectForKey:subtitle];
+    NSString *subtitle = [self.subtitles objectAtIndex:indexPath.row];
+    UIImage *image = [self.avatars objectForKey:subtitle];
     return [[UIImageView alloc] initWithImage:image];
 }
 
 - (NSString *)subtitleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [_subtitles objectAtIndex:indexPath.row];
+    return [self.subtitles objectAtIndex:indexPath.row];
 }
 
 @end
