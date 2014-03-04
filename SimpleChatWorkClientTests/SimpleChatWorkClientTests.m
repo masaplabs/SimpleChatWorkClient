@@ -9,7 +9,10 @@
 #import <XCTest/XCTest.h>
 
 @interface SimpleChatWorkClientTests : XCTestCase
-
+// AssertTrue テスト用
+@property (nonatomic, strong) NSString *testString1;
+@property (nonatomic, strong) NSString *testString2;
+@property (nonatomic, strong) NSString *testString3;
 @end
 
 @implementation SimpleChatWorkClientTests
@@ -18,6 +21,9 @@
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.testString1 = @"test1";
+	self.testString2 = @"test2";
+	self.testString3 = @"test3";
 }
 
 - (void)tearDown
@@ -26,9 +32,22 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+- (void)testExample {
+	// 必ず失敗するメソッド
+//    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+	XCTAssertEqual(self.testString1, @"test1");
+}
+
+- (void)testExample2 {
+	// 必ず失敗するメソッド
+	//    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+	XCTAssertEqual(self.testString2, @"test2");
+}
+
+- (void)testExample3 {
+	// 必ず失敗するメソッド
+	//    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+	XCTAssertEqual(self.testString3, @"test3");
 }
 
 @end
